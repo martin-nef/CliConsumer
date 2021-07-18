@@ -2,15 +2,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Cli
 {
-  public class DependencyInjectionHelper
-  {
-    public ServiceProvider SetupServiceProvider()
+    public class DependencyInjectionHelper
     {
-      //setup Dependency Injection
-      var serviceProvider = new ServiceCollection()
-          // .AddSingleton<IFooService, FooService>()
-          .BuildServiceProvider();
-      return serviceProvider;
+        public ServiceProvider SetupServiceProvider()
+        {
+            var serviceProvider = new ServiceCollection()
+                // .AddTransient<TInterface, TImplementation>()
+                .BuildServiceProvider();
+            return serviceProvider;
+        }
     }
-  }
 }
